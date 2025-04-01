@@ -21,22 +21,23 @@ export default function Projects() {
       location: "San Francisco, CA",
       year: "2023",
     },
-    {
-      title: "Central Business District Office Complex",
-      description:
-        "A modern office complex utilizing our high-strength steel and custom concrete solutions.",
-      image: "/bb3.jpg",
-      location: "Chicago, IL",
-      year: "2022",
-    },
-    {
-      title: "Riverside Bridge Reconstruction",
-      description:
-        "A critical infrastructure project showcasing our durable concrete and weather-resistant materials.",
-      image: "/bb1.jpg",
-      location: "Portland, OR",
-      year: "2024",
-    },
+    // },
+    // {
+    //   title: "Central Business District Office Complex",
+    //   description:
+    //     "A modern office complex utilizing our high-strength steel and custom concrete solutions.",
+    //   image: "/bb3.jpg",
+    //   location: "Chicago, IL",
+    //   year: "2022",
+    // },
+    // {
+    //   title: "Riverside Bridge Reconstruction",
+    //   description:
+    //     "A critical infrastructure project showcasing our durable concrete and weather-resistant materials.",
+    //   image: "/bb1.jpg",
+    //   location: "Portland, OR",
+    //   year: "2024",
+    // },
   ];
 
   return (

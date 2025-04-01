@@ -40,12 +40,12 @@ export default function Sustainability() {
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div>
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Sustainability and Innovation</h2>
+            {/* <h2 className="mb-4 text-3xl font-bold md:text-4xl">Sustainability and Innovation</h2>
             <p className="mb-8 text-muted-foreground">
               We prioritize sustainability, using environmentally friendly practices and locally sourced materials to
               minimize our ecological footprint. Our focus on innovation ensures that our products and services stay
               ahead of the curve.
-            </p>
+            </p> */}
             <div className="grid gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4">
@@ -69,9 +69,9 @@ export default function Sustainability() {
         </div>
 
         <div className="mt-16">
-          <h3 className="text-2xl font-bold mb-6 text-center">Our Sustainability Commitment</h3>
+          {/* <h3 className="text-2xl font-bold mb-6 text-center">Our Sustainability Commitment</h3> */}
           <div className="grid gap-8 md:grid-cols-2">
-            <div>
+            {/* <div>
               <h4 className="text-xl font-semibold mb-4">Environmental Impact Reduction</h4>
               <p className="text-muted-foreground mb-6">
                 We're committed to reducing our environmental impact across all operations. Our comprehensive
@@ -93,7 +93,7 @@ export default function Sustainability() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             <div>
               <h4 className="text-xl font-semibold mb-4">Sustainable Innovation</h4>
