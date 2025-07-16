@@ -70,7 +70,7 @@ export default function Hero() {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm group" asChild>
+              <Button size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm group" asChild>
                 <Link href="/about">
                   <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   Learn More
