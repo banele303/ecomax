@@ -1,5 +1,4 @@
 import Hero from "@/components/hero"
-import Products from "@/components/products"
 import Sustainability from "@/components/sustainability"
 import CustomerSatisfaction from "@/components/customer-satisfaction"
 import Testimonials from "@/components/testimonials"
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <Products />
       <ContactButtons/>
       <Sustainability />
       <Projects />
