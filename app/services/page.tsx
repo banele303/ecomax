@@ -19,7 +19,7 @@ export default function ServicesPage() {
     {
       icon: Grid3X3,
       title: "Flooring",
-      description: "Our professional flooring services provide durable, beautiful, and long-lasting solutions for residential and commercial properties. We use high-quality materials and expert installation techniques.",
+      description: "Transform your space with our stunning range of flooring options. Our collection offers something for every style and budget. Whether you're looking to enhance the beauty of your home or boost the functionality of your commercial space, our flooring solutions are designed to deliver exceptional quality and performance.",
       image: "/floor1.jpeg",
       link: "/services/flooring",
       features: ["Laminate flooring", "Vinyl installation", "Tile flooring", "Engineered wood solutions"]
@@ -55,11 +55,11 @@ export default function ServicesPage() {
     { src: "/waterproof1.jpeg", alt: "Waterproofing Project" },
     { src: "/waterproof3.jpeg", alt: "Commercial Waterproofing" },
     { src: "/waterproof5.jpeg", alt: "Roof Waterproofing" },
-    { src: "/waterproof7.jpeg", alt: "Foundation Waterproofing" },
+    { src: "/real-flooring.jpeg", alt: "Professional Flooring Installation" },
+    { src: "/realflooring2.jpeg", alt: "Premium Flooring Solutions" },
+    { src: "/realflooring3.jpeg", alt: "Custom Flooring Project" },
     { src: "/floor1.jpeg", alt: "Laminate Flooring" },
-    { src: "/floor3.jpeg", alt: "Tile Flooring" },
-    { src: "/floor5.jpeg", alt: "Flooring Installation" },
-    { src: "/floor7.jpeg", alt: "Custom Flooring" }
+    { src: "/floor5.jpeg", alt: "Flooring Installation" }
   ];
 
   return (

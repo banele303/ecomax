@@ -39,14 +39,14 @@ export default function FlooringPage() {
   ];
 
   const galleryImages = [
+    { src: "/real-flooring.jpeg", alt: "Professional Flooring Installation" },
+    { src: "/realflooring2.jpeg", alt: "Premium Flooring Solutions" },
+    { src: "/realflooring3.jpeg", alt: "Custom Flooring Project" },
     { src: "/floor1.jpeg", alt: "Laminate Flooring Installation" },
     { src: "/floor2.jpeg", alt: "Vinyl Flooring Project" },
     { src: "/floor3.jpeg", alt: "Tile Flooring Installation" },
-    { src: "/floor4.jpeg", alt: "Engineered Wood Flooring" },
     { src: "/floor5.jpeg", alt: "Commercial Flooring Project" },
-    { src: "/floor6.jpeg", alt: "Residential Flooring Installation" },
-    { src: "/floor7.jpeg", alt: "Custom Flooring Design" },
-    { src: "/floor9.jpeg", alt: "Industrial Flooring Solution" }
+    { src: "/floor7.jpeg", alt: "Custom Flooring Design" }
   ];
 
   return (
@@ -70,9 +70,7 @@ export default function FlooringPage() {
                 Flooring Solutions
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Our professional flooring services provide durable, beautiful, and long-lasting solutions 
-                for residential and commercial properties. We use high-quality materials and expert 
-                installation techniques to ensure your complete satisfaction.
+                Transform your space with our stunning range of flooring options. Our collection offers something for every style and budget. Whether you're looking to enhance the beauty of your home or boost the functionality of your commercial space, our flooring solutions are designed to deliver exceptional quality and performance. Explore our range today and discover the perfect flooring to suit your needs.
               </p>
               <div className="flex gap-4">
                 <Button asChild size="lg">
