@@ -44,7 +44,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://ecomax-manufacturing.com" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="light">
+        <ThemeProvider defaultTheme="system" enableSystem storageKey="ecomax-theme">
           <Navbar />
           {children}
           <WhatsAppButton phoneNumber="+27123456789" />
@@ -54,6 +54,4 @@ export default function RootLayout({
   )
 }
 
-
-
-import './globals.css'
+// (globals.css already imported at top)

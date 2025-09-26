@@ -34,14 +34,43 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme)
 
+  // Load stored theme on first mount
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(storageKey) as Theme | null
+      if (stored === "light" || stored === "dark" || stored === "system") {
+        setTheme(stored)
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, [storageKey])
+
   useEffect(() => {
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
 
     if (theme === "system" && enableSystem) {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      const mql = window.matchMedia("(prefers-color-scheme: dark)")
+      const systemTheme = mql.matches ? "dark" : "light"
       root.classList.add(systemTheme)
-      return
+      // React to system theme changes while on system mode
+      const onChange = (e: MediaQueryListEvent) => {
+        root.classList.remove("light", "dark")
+        root.classList.add(e.matches ? "dark" : "light")
+      }
+      try {
+        mql.addEventListener("change", onChange)
+        return () => mql.removeEventListener("change", onChange)
+      } catch {
+        // Safari fallback
+        // @ts-ignore
+        mql.addListener(onChange)
+        return () => {
+          // @ts-ignore
+          mql.removeListener(onChange)
+        }
+      }
     }
 
     root.classList.add(theme)

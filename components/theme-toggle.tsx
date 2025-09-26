@@ -14,22 +14,10 @@ export function ThemeToggle() {
     setMounted(true)
   }, [])
 
-  // Force initial theme to ensure it works in preview
-  useEffect(() => {
-    const root = document.documentElement
-    if (!root.classList.contains("light") && !root.classList.contains("dark")) {
-      root.classList.add("light")
-    }
-  }, [])
-
   const toggleTheme = () => {
-    const newTheme = theme === "dark" || document.documentElement.classList.contains("dark") ? "light" : "dark"
+    const isDark = theme === "dark" || document.documentElement.classList.contains("dark")
+    const newTheme = isDark ? "light" : "dark"
     setTheme(newTheme)
-
-    // Directly manipulate the DOM for immediate effect in preview
-    const root = document.documentElement
-    root.classList.remove("light", "dark")
-    root.classList.add(newTheme)
   }
 
   if (!mounted) {

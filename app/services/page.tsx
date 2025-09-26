@@ -112,7 +112,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-background">
+      <section id="services" className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Our Expertise</Badge>
@@ -124,27 +124,33 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden transition-all hover:shadow-lg">
-                <div className="relative h-64">
-                  <Image 
-                    src={service.image} 
-                    alt={service.title} 
-                    fill 
-                    className="object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
+              <Card
+                key={index}
+                className="group overflow-hidden transition-all hover:shadow-xl border-muted/30 dark:border-muted/20 bg-card/95"
+              >
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3">
                     <div className="p-2 rounded-full bg-primary/10">
                       <service.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <Badge>{service.title}</Badge>
+                    <CardTitle className="uppercase tracking-wider font-extrabold text-xl">
+                      {service.title}
+                    </CardTitle>
                   </div>
-                  <CardTitle className="text-2xl">{service.title} Services</CardTitle>
                 </CardHeader>
+                <div className="px-6">
+                  <div className="relative h-64 w-full overflow-hidden rounded-xl border border-border/60">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <div className="grid grid-cols-2 gap-2 mt-4">
+                  <p className="text-muted-foreground mb-4 leading-relaxed">{service.description}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-primary" />
@@ -154,9 +160,13 @@ export default function ServicesPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild variant="outline" className="w-full">
-                    <Link href={service.link} className="flex items-center justify-between">
-                      <span>Learn More</span>
+                  <Button
+                    asChild
+                    variant="secondary"
+                    className="rounded-full px-6 py-5 text-base font-semibold bg-muted/40 hover:bg-muted/60 w-fit"
+                  >
+                    <Link href={service.link} className="flex items-center gap-2">
+                      Learn More
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
