@@ -2,7 +2,7 @@
 
 import { Building2, Menu } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -35,26 +35,34 @@ export default function Navbar() {
         </Link>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:gap-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              {item.name}
-            </Link>
+          {navItems.map((item, index) => (
+            <Fragment key={item.name}>
+              <Link
+                href={item.href}
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
+                {item.name}
+              </Link>
+              {index === 1 && (
+                <div className="relative group">
+                  <button className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary focus:outline-none">
+                    Services
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className="absolute left-0 z-10 mt-2 w-40 rounded border bg-white shadow-lg opacity-0 transition-opacity group-hover:opacity-100">
+                    <Link href="/services/waterproofing" className="block px-4 py-2 text-sm hover:bg-gray-100">
+                      Waterproofing
+                    </Link>
+                    <Link href="/services/flooring" className="block px-4 py-2 text-sm hover:bg-gray-100">
+                      Flooring
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </Fragment>
           ))}
-          {/* Services Dropdown */}
-          <div className="relative group">
-            <button className="text-sm font-medium transition-colors hover:text-primary focus:outline-none flex items-center gap-1">
-              Services
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div className="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-              <Link href="/services/waterproofing" className="block px-4 py-2 text-sm hover:bg-gray-100">Waterproofing</Link>
-              <Link href="/services/flooring" className="block px-4 py-2 text-sm hover:bg-gray-100">Flooring</Link>
-            </div>
-          </div>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -71,22 +79,36 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-6 pt-6">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-primary"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+                {navItems.map((item, index) => (
+                  <Fragment key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-lg font-medium transition-colors hover:text-primary"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                    {index === 1 && (
+                      <div className="flex flex-col gap-2">
+                        <span className="text-lg font-medium">Services</span>
+                        <Link
+                          href="/services/waterproofing"
+                          className="pl-4 text-base hover:text-primary"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Waterproofing
+                        </Link>
+                        <Link
+                          href="/services/flooring"
+                          className="pl-4 text-base hover:text-primary"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Flooring
+                        </Link>
+                      </div>
+                    )}
+                  </Fragment>
                 ))}
-                {/* Services Dropdown for Mobile */}
-                <div className="flex flex-col gap-2">
-                  <span className="text-lg font-medium">Services</span>
-                  <Link href="/services/waterproofing" className="pl-4 text-base hover:text-primary" onClick={() => setIsMenuOpen(false)}>Waterproofing</Link>
-                  <Link href="/services/flooring" className="pl-4 text-base hover:text-primary" onClick={() => setIsMenuOpen(false)}>Flooring</Link>
-                </div>
                 <Button className="mt-4">Get a Quote</Button>
               </div>
             </SheetContent>
