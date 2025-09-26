@@ -15,7 +15,6 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
-    { name: "Services", href: "/services" },
     { name: "Sustainability", href: "#sustainability" },
     { name: "Contact", href: "#contact" },
   ];
@@ -45,6 +44,17 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+          {/* Services Dropdown */}
+          <div className="relative group">
+            <button className="text-sm font-medium transition-colors hover:text-primary focus:outline-none flex items-center gap-1">
+              Services
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div className="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              <Link href="/services/waterproofing" className="block px-4 py-2 text-sm hover:bg-gray-100">Waterproofing</Link>
+              <Link href="/services/flooring" className="block px-4 py-2 text-sm hover:bg-gray-100">Flooring</Link>
+            </div>
+          </div>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -71,6 +81,12 @@ export default function Navbar() {
                     {item.name}
                   </Link>
                 ))}
+                {/* Services Dropdown for Mobile */}
+                <div className="flex flex-col gap-2">
+                  <span className="text-lg font-medium">Services</span>
+                  <Link href="/services/waterproofing" className="pl-4 text-base hover:text-primary" onClick={() => setIsMenuOpen(false)}>Waterproofing</Link>
+                  <Link href="/services/flooring" className="pl-4 text-base hover:text-primary" onClick={() => setIsMenuOpen(false)}>Flooring</Link>
+                </div>
                 <Button className="mt-4">Get a Quote</Button>
               </div>
             </SheetContent>
